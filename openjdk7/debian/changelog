@@ -1,3 +1,20 @@
+openjdk-7 (7u95-2.6.4-0shuhao0.16.04.0) xenial; urgency=medium
+
+  * Make it available for Xenial.
+  * Removed tzdata dependency.
+
+ -- Shuhao Wu <shuhao@shuhaowu.com>  Sat, 09 Apr 2016 21:48:23 -0400
+
+openjdk-7 (7u95-2.6.4-0ubuntu0.15.10.2) wily-security; urgency=medium
+
+  * SECURITY UPDATE: Applies to client deployment of Java only. This
+    vulnerability can be exploited only through sandboxed Java Web Start
+    applications and sandboxed Java applets.
+    - d/p/jdk-8152335-improve-methodhandle-consistency.patch: S8152335, 
+      CVE-2016-0636: Improve MethodHandle consistency
+
+ -- Tiago Stürmer Daitx <tiago.daitx@canonical.com>  Wed, 23 Mar 2016 17:55:30 +0000
+
 openjdk-7 (7u95-2.6.4-0ubuntu0.15.10.1) wily-security; urgency=medium
 
   * Icedtea release 2.6.4 (based on 7u95)
