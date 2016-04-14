@@ -1,0 +1,18 @@
+# DP: Fix configure check for the SunEC security provider.
+
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -2743,9 +2743,12 @@
+   if test x"${ENABLE_SUNEC}" = "xyes"; then
+     PKG_CHECK_MODULES(NSS_SOFTOKN, nss-softokn >= 3.16.1, [NSS_SOFTOKN_FOUND=yes], [NSS_SOFTOKN_FOUND=no])
+     PKG_CHECK_MODULES(NSS_JAVA, nss-java, [NSS_JAVA_FOUND=yes], [NSS_JAVA_FOUND=no])
++    NSS_SOFTOKN_FOUND=yes
++    NSS_SOFTOKN_CFLAGS=$NSS_CFLAGS
+     if test "x${NSS_SOFTOKN_FOUND}" = "xyes"; then
++      nsslibdir="/usr/lib/$(dpkg-architecture -qDEB_HOST_MULTIARCH)/nss"
+       SUNEC_CFLAGS=$NSS_SOFTOKN_CFLAGS;
+-      SUNEC_LIBS="$NSS_LIBS -lfreebl";
++      SUNEC_LIBS="$NSS_LIBS -L$nsslibdir -Xlinker -rpath=$nsslibdir -lfreebl3";
+     elif test "x${NSS_JAVA_FOUND}" = "xyes"; then
+       SUNEC_CFLAGS="$NSS_JAVA_CFLAGS -DLEGACY_NSS";
+       SUNEC_LIBS=$NSS_JAVA_LIBS;
