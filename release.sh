@@ -24,5 +24,5 @@ pushd openjdk-7-7u95-2.6.4
   debuild -S -sa
 popd
 
-dput ppa:shuhao/xenialjdk7 openjdk-7_7u95-2.6.4-0shuhao0.16.04.0_source.changes
+dput ppa:shuhao/xenialjdk7 openjdk-7_7u95-2.6.4-0shuhao0.16.04.1_source.changes
 

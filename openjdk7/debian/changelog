@@ -1,4 +1,4 @@
-openjdk-7 (7u95-2.6.4-0shuhao0.16.04.0) xenial; urgency=medium
+openjdk-7 (7u95-2.6.4-0shuhao0.16.04.1) xenial; urgency=medium
 
   * Make it available for Xenial.
   * Removed tzdata dependency.
